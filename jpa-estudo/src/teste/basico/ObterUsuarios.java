@@ -12,7 +12,7 @@ import modelo.basico.Usuario;
 public class ObterUsuarios {
 
 	public static void main(String[] args) {
-		// Responsável por criar o EntityManager
+		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa-estudo");
 		EntityManager em = emf.createEntityManager();
 		
