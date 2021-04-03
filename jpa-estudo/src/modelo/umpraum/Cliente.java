@@ -1,5 +1,6 @@
 package modelo.umpraum;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +21,7 @@ public class Cliente {
 	@Column(name = "nome", nullable = false, length = 60)
 	private String nome;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "assento_id", unique = true)
 	private Assento assento;
 	
