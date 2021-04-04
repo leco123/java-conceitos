@@ -29,12 +29,12 @@ public class DAO<E> {
 		try {
 			emf = Persistence.createEntityManagerFactory("jpa-estudo");
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("Opsss!!!! Falha na conexão com a base de dados!!!");
 		}
 	}
 	
 	public DAO() {
-		this.classe = null;
+		this(null);
 	}
 	
 	public DAO(Class<E> classe) {
@@ -110,5 +110,5 @@ public class DAO<E> {
 	public void fecharConexao() {
 		em.close();
 	}
-
+	
 }

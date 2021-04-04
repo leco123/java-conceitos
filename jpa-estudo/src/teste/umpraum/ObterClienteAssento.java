@@ -18,8 +18,10 @@ public class ObterClienteAssento {
 		Assento assento = daoAssento.obterPorID(1L);
 		System.out.println("Assento: "+assento.getNome());
 		
+		daoCliente.fecharTransacao();
 		daoCliente.fecharConexao();
-		daoAssento.fecharConexao();
+		daoAssento.fecharTransacao();
+		daoAssento.fecharConexao();;
 	}
 
 }

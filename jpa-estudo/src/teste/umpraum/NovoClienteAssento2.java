@@ -1,7 +1,6 @@
 package teste.umpraum;
 
-import infra.AssentoDAO;
-import infra.ClienteDAO;
+import infra.DAO;
 import modelo.umpraum.Assento;
 import modelo.umpraum.Cliente;
 
@@ -9,14 +8,16 @@ public class NovoClienteAssento2 {
 
 public static void main(String[] args) {
 		
-		AssentoDAO assentoDAO = new AssentoDAO();
-		ClienteDAO clienteDAO = new ClienteDAO();
+		DAO<Object> dao = new DAO<>();
 		
 		Assento assento = new Assento("4-F");
 		Cliente cliente = new Cliente("Marcos da Silva", assento);
-
-		assentoDAO.incluirAtomico(assento);
-		clienteDAO.incluirAtomico(cliente);
+		
+		dao.abrirTransacao()
+			.incluir(assento)
+			.incluir(cliente)
+			.fecharTransacao()
+			.fecharConexao();
 	}
 
 }
