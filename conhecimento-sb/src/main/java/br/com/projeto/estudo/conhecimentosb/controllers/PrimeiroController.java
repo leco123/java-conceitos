@@ -29,7 +29,7 @@ public class PrimeiroController {
 	
 	@PostMapping(path = {"/saudacao"})
 	public String saudacao() {
-		return "Olá Spring Boot!";
+		return "Olá Spring Boot (POST)!";
 	}
 
 }
