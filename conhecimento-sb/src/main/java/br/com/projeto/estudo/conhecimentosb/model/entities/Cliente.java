@@ -1,4 +1,4 @@
-package br.com.projeto.estudo.conhecimentosb.models;
+package br.com.projeto.estudo.conhecimentosb.model.entities;
 
 public class Cliente {
 	
