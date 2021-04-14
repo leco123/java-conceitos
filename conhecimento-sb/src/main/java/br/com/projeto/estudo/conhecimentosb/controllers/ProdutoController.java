@@ -14,6 +14,7 @@ import br.com.projeto.estudo.conhecimentosb.model.repositories.ProdutoRepository
 @RequestMapping("/api/produtos")
 public class ProdutoController {
 	
+	// injeção de dependência
 	@Autowired
 	private ProdutoRepository produtoRepository;
 	
