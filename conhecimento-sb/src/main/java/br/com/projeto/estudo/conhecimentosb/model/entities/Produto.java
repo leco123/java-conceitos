@@ -18,12 +18,21 @@ public class Produto {
 	@Column(length = 200)
 	private String nome;
 	
+	@Column(nullable = false, precision = 2)
+	private double preco;
+	
+	@Column(nullable = false, precision = 2)
+	private double desconto;
+	
 	public Produto() {}
 	
-	public Produto(String nome) {
+	public Produto(String nome, double preco, double desconto) {
 		super();
 		this.nome = nome;
+		this.setPreco(preco);
+		this.setDesconto(desconto);
 	}
+	
 
 	public int getId() {
 		return id;
@@ -39,6 +48,22 @@ public class Produto {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+	public double getDesconto() {
+		return desconto;
+	}
+
+	public void setDesconto(double desconto) {
+		this.desconto = desconto;
 	}
 
 }
