@@ -8,7 +8,7 @@ import br.com.projeto.estudo.conhecimentosb.model.entities.Produto;
 
 public interface ProdutoRepository extends PagingAndSortingRepository<Produto, Integer> {
 	
-	public Iterable<Produto> findByNomeContainingIgnoreCaseAndASC(String parteNome);
+	public Iterable<Produto> findByNomeContainingIgnoreCase(String parteNome);
 	
 	public Iterable<Produto> findByPrecoContaining(double preco);
 	
