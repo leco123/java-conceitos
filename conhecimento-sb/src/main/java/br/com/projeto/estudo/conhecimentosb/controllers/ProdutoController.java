@@ -52,8 +52,23 @@ public class ProdutoController {
 		return produtoRepository.findAll(page);
 	}
 	
+	@GetMapping(path = "/nome/{parteNome}")
+	public Iterable<Produto> obterProduoPorNome(@PathVariable String parteNome) {
+		return produtoRepository.findByNomeContainingIgnoreCase(parteNome);
+	}
+	
+	@GetMapping(path = "/preco/{preco}")
+	public Iterable<Produto> obterProduoPorPreco(@PathVariable double preco) {
+		return produtoRepository.findByPrecoContaining(preco);
+	}
+	
+	@GetMapping(path = "/preco/{desconto}")
+	public Iterable<Produto> obterProduoPorDesconto(@PathVariable double desconto) {
+		return produtoRepository.findByPrecoContaining(desconto);
+	}
+	
 	@GetMapping(path = "/{id}")
-	public Optional<Produto> obterProdutoPorId(@PathVariable int id) {
+	public Optional<Produto> obterProdutoPor(@PathVariable int id) {
 		return produtoRepository.findById(id);
 	}
 	
